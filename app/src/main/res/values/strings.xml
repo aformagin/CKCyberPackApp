@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">CKCyberPackApp</string>
+    <string name="app_name">CK CyberPack FIRST App</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_delphi">Chief Delphi</string>
+    <string name="title_tba">TBA</string>
 </resources>

@@ -13,9 +13,11 @@ import static com.thirdspare.android.ckcyberpackapp.R.id.container;
 
 
 public class MainActivity extends AppCompatActivity {
-    Fragment TestFrag = new TestFrag();
-    Fragment MysticalFrag = new MysticalFrag();
+    Fragment homeFragment = new HomeFragment();
+    Fragment delphiFragment = new DelphiFragment();
+    Fragment tbaFragment = new TBAFragment();
     private TextView mTextMessage;
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -24,23 +26,25 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
+                   // mTextMessage.setText(R.string.title_home);
                     getFragmentManager().beginTransaction()
-                    .show(TestFrag)
+                    .show(homeFragment)
                     .commit();
                     return true;
-                case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
+                case R.id.navigation_delphi:
+                   // mTextMessage.setText(R.string.title_delphi);
                     getFragmentManager().beginTransaction()
-                            .show(MysticalFrag)
-                            .hide(TestFrag)
+                            .show(delphiFragment)
+                            .hide(homeFragment)
                             .commit();
 
                     return true;
                 case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
+                   // mTextMessage.setText(R.string.title_tba);
                     getFragmentManager().beginTransaction()
-                            .hide(TestFrag)
+                            .show(tbaFragment)
+                            .hide(homeFragment)
+                            .hide(delphiFragment)
                             .commit();
                     return true;
             }
@@ -60,11 +64,13 @@ public class MainActivity extends AppCompatActivity {
 
         if (savedInstanceState == null){
             FragmentTransaction ft = getFragmentManager().beginTransaction();
-            ft.add(container, TestFrag);
+            ft.add(container, homeFragment);
 
-            ft.add(container, MysticalFrag);
-            ft.hide(MysticalFrag);
+            ft.add(container, delphiFragment);
+            ft.hide(delphiFragment);
 
+            ft.add(container, tbaFragment);
+            ft.hide(tbaFragment);
             ft.commit();
       }
     }

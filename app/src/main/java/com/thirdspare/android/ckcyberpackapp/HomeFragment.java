@@ -7,9 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-public class MysticalFrag extends Fragment {
+
+public class HomeFragment extends Fragment {
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parentViewGroup, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.frag_mystical, parentViewGroup, false);
+        return inflater.inflate(R.layout.frag_home, parentViewGroup, false);
     }
 }
